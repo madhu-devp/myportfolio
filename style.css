@@ -468,17 +468,7 @@ section {
   background: linear-gradient(145deg, #2a2a2a, #111);
 }
 
-/* Animations */
-.animate {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-out;
-}
 
-.animate.show {
-  opacity: 1;
-  transform: translateY(0px);
-}
 
 /* RESPONSIVE STYLES */
 @media (max-width: 768px) {
@@ -743,6 +733,7 @@ section {
   background: #e91e63;
   color: #fff;
 }
+
 
 
 
