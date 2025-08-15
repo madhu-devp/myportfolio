@@ -8,64 +8,28 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ==== MOBILE FIXES & HAMBURGER MENU ==== */
-@media (max-width: 768px) {
-  
-  /* 1. Fix the overlay so it doesn't block scrolling */
-  body::before {
-    position: absolute !important;
-    height: 100% !important;
-  }
-
-  /* 2. Allow natural section height */
-  section {
-    min-height: auto !important;
-    padding-top: 100px !important; /* space for fixed header */
-  }
-
-  /* 3. Remove parallax/fixed background on mobile */
-  body {
-    background-attachment: scroll !important;
-  }
-
-  .hamburger {
-  display: none; /* shows on mobile */
-  font-size: 26px;
-  cursor: pointer;
-  color: #e91e63;
+/* Whole page cinematic load */
+body {
+  animation: cinematicLoad 0.7s ease-in-out;
 }
 
-.nav-links {
-  display: flex; /* desktop default */
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
+@keyframes cinematicLoad {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: blur(2px);
   }
-  .nav-links {
-    display: none; /* hide by default */
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: rgba(233, 30, 99, 0.95);
-    width: 200px;
-    padding: 20px;
-    gap: 15px;
+  50% {
+    opacity: 0.5;
+    transform: scale(0.98);
+    filter: blur(3px);
   }
-  .nav-links.show {
-    display: flex; /* show when toggled */
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
   }
 }
-
-  /* 5. Make sure footer stays visible */
-  .footer {
-    position: relative !important;
-  }
-}
-
-
 
 body {
   background: url("bg8.webp") no-repeat center center fixed;
@@ -86,11 +50,11 @@ body {
 /* Overlay to dim and blur the background image */
 body::before {
   content: '';
-  position: absolute !important;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100% !important;
+  height: 100%;
   backdrop-filter: blur(2px);
   z-index: -1;
 }
@@ -249,6 +213,27 @@ header {
   color: #e91e63;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    background-color: rgba(0,0,0,0.9);
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.show {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
 
 section {
   padding: 120px 20px;
@@ -737,17 +722,8 @@ section {
   body {
     background-attachment: scroll !important;
   }
-  .nav-links {
-    position: static !important;
-    background: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-  }
+  
   .footer {
     position: relative !important;
   }
 }
-
-
