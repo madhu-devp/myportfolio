@@ -54,20 +54,7 @@ document.querySelectorAll('img[loading="lazy"]').forEach(img => {
 
 
 
-// Scroll animation
-const animElements = document.querySelectorAll(".animate");
 
-function revealOnScroll() {
-  animElements.forEach((el) => {
-    const elementTop = el.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-    if (elementTop < windowHeight - 50) {
-      el.classList.add("show");
-    }
-  });
-}
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
 
 // Tap/click animation
 document.querySelectorAll(".project-card").forEach(card => {
@@ -108,6 +95,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
         alert("❌ Message not sent. Please try again.");
     }
 });
+
 
 
 
