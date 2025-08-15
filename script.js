@@ -1,10 +1,10 @@
-// Hamburger menu toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
 });
+
 
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
@@ -95,7 +95,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
         alert("❌ Message not sent. Please try again.");
     }
 });
-
 
 
 
