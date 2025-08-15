@@ -28,27 +28,36 @@ html {
     background-attachment: scroll !important;
   }
 
-  /* 4. Hamburger menu behavior */
-  .nav-links {
-    position: fixed !important;
-    top: 70px; /* adjust for navbar height */
-    left: 0;
-    width: 100%;
-    height: calc(100% - 70px);
-    background: rgba(0, 0, 0, 0.9);
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 20px;
-    padding-top: 20px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-  }
+  .hamburger {
+  display: none; /* shows on mobile */
+  font-size: 26px;
+  cursor: pointer;
+  color: #e91e63;
+}
 
-  /* When menu is active */
-  .nav-links.active {
-    transform: translateX(0);
+.nav-links {
+  display: flex; /* desktop default */
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
   }
+  .nav-links {
+    display: none; /* hide by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(233, 30, 99, 0.95);
+    width: 200px;
+    padding: 20px;
+    gap: 15px;
+  }
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+}
 
   /* 5. Make sure footer stays visible */
   .footer {
@@ -740,4 +749,5 @@ section {
     position: relative !important;
   }
 }
+
 
