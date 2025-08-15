@@ -15,28 +15,6 @@ html {
 
 /* Whole page cinematic load */
 body {
-  animation: cinematicLoad 0.7s ease-in-out;
-}
-
-@keyframes cinematicLoad {
-  0% {
-    opacity: 0;
-    transform: scale(0.96);
-    filter: blur(2px);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(0.98);
-    filter: blur(3px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
-
-body {
   background: url("bg8.webp") no-repeat center center fixed;
   background-size: cover;
   font-family: Sans-Serif;
@@ -733,6 +711,7 @@ section {
   background: #e91e63;
   color: #fff;
 }
+
 
 
 
