@@ -43,13 +43,15 @@ body {
   color: #fff;
 }
 
-/* Mobile screen - remove image and use solid/gradient color */
+/* Mobile - force remove image */
 @media screen and (max-width: 768px) {
   body {
-    background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #2b2b2b);
-    background-attachment: scroll;
+    background: #111 !important; /* Dark solid color */
+    background-attachment: scroll !important;
+    background-image: none !important;
   }
 }
+
 
 
 
@@ -760,5 +762,6 @@ section {
     transform: translateY(0);
   }
 }
+
 
 
